@@ -18,6 +18,8 @@ void SelfSimilarityTest(Mat &referenceImage, Mat &transformedImage,												/
 			Mat desc2;
 			desc2.push_back(transformedDescriptors.row(i));
 
+
+			/////TEST 중입니다///////
 			
 
 			// TODO: 거리구하기
