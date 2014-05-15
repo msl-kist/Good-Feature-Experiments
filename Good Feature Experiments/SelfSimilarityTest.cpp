@@ -9,7 +9,7 @@ void SelfSimilarityTest(Mat referenceImage, Mat transformedImage,												// 
 {
 	for(int i=0; i<referenceKeyPoints.size(); ++i)
 	{
-		if(!IS_NULL(transformedKeyPoints[i]))				//TODO: NONE 정의
+		if(!IS_NULL(transformedKeyPoints[i]))				// TODO: NONE 정의
 		{
 			// 디스크립터 추출
 			Mat desc1;
@@ -19,7 +19,7 @@ void SelfSimilarityTest(Mat referenceImage, Mat transformedImage,												// 
 
 			
 
-			//TODO: 거리구하기
+			// TODO: 거리구하기
 			float score = 0;
 
 			// result에 넣기
