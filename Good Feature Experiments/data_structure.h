@@ -30,8 +30,7 @@ struct Data
 };
 
 /************************************************************************/
-/*	2번 실험 - Self Similarity Test 실험 코드								*/
-/*	(채승호)																*/
+/*TODO: (채승호) 	2번 실험 - Self Similarity Test 실험 코드	
 /************************************************************************/
 void SelfSimilarityTest(Mat &referenceImage, Mat &transformedImage,												// I and T(I)
 	vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &transformedKeyPoints,				// K and K'
@@ -39,17 +38,15 @@ void SelfSimilarityTest(Mat &referenceImage, Mat &transformedImage,												/
 	vector<struct Data> &result);
 
 /************************************************************************/
-/*	3번 실험 - Seperatibility 실험 코드
-/*	(채승호)
+/*TODO: (채승호) 	3번 실험 - Seperatibility 실험 코드
 /************************************************************************/
-void Seperatibility(vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &transformedKeyPoints,				// K and K'
+void SeperatibilityTest(vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &transformedKeyPoints,				// K and K'
 					Mat &referenceDescriptors, Mat &transformedDescriptors,									// d(K) and d(K')
 					vector<struct Data> &result);
 
 
 /************************************************************************/
-/*	1번 실험 - Cornerness 실험 코드
-/*	(양윤식)
+/*TODO: (양윤식) 	1번 실험 - Cornerness 실험 코드
 /************************************************************************/
 void CornernessTest(Mat &referenceImage, Mat &transformedImage,
 	vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &transformedKeyPoints,				// K and K'
@@ -57,7 +54,6 @@ void CornernessTest(Mat &referenceImage, Mat &transformedImage,
 	vector<struct Data> &result);
 
 /************************************************************************/
-/*	저장된 영상과 변환행렬을 로드하는 코드
-/*	(양윤식)
+/*TODO: (양윤식) 	저장된 영상과 변환행렬을 로드하는 코드
 /************************************************************************/
 void LoadImages(Mat &referenceImage, vector<Mat> &transformedImages, vector<Mat> &matrices);
