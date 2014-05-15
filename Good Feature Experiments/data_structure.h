@@ -53,6 +53,7 @@ void Seperatibility(vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &tran
 /************************************************************************/
 void CornernessTest(Mat &referenceImage, Mat &transformedImage,
 	vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &transformedKeyPoints,				// K and K'
+	Mat transformationMatrix,																	// 변환행렬
 	vector<struct Data> &result);
 
 /************************************************************************/
