@@ -2,10 +2,11 @@
 
 using namespace cv;
 
-void SelfSimilarityTest(Mat referenceImage, Mat transformedImage,												// I and T(I)
-						vector<KeyPoint> referenceKeyPoints, vector<KeyPoint> transformedKeyPoints,				// K and K'
-						Mat referenceDescriptors, Mat transformedDescriptors,									// d(K) and d(K')
-						vector<struct Data> result)
+// TODO: (채승호) 2번 실험 모듈 확인
+void SelfSimilarityTest(Mat &referenceImage, Mat &transformedImage,												// I and T(I)
+						vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &transformedKeyPoints,				// K and K'
+						Mat &referenceDescriptors, Mat &transformedDescriptors,									// d(K) and d(K')
+						vector<struct Data> &result)
 {
 	for(int i=0; i<referenceKeyPoints.size(); ++i)
 	{

@@ -1,7 +1,6 @@
 #include "data_structure.h"
 
 
-
 int main()
 {
 	cv::Mat	referenceImage;
