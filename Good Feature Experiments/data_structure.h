@@ -1,4 +1,5 @@
 #include <vector>
+#include <map>
 
 #include <opencv2/opencv.hpp>
 #include "OpenCv2.4.5_libs.h"
@@ -25,7 +26,7 @@ struct Data
 
 	int	cornerness;					// 실험 1) cornerness(n_exist)  - n_exist / n_transformed
 	vector<float>	selfSimilarity; // 실험 2) Self Similarity	- 개수: # of transformed images
-	//vector						// 실험 3) Histogram
+	map<int, int>					// 실험 3) Histogram			- MAP 자료형은 http://www.hanbit.co.kr/network/view.html?bi_id=1618 여기 참조하시오
 };
 
 /************************************************************************/
@@ -38,9 +39,24 @@ void SelfSimilarityTest(Mat &referenceImage, Mat &transformedImage,												/
 	vector<struct Data> &result);
 
 /************************************************************************/
+/*	3번 실험 - Seperatibility 실험 코드
+/*	(채승호)
+/************************************************************************/
+void Seperatibility(vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &transformedKeyPoints,				// K and K'
+					Mat &referenceDescriptors, Mat &transformedDescriptors,									// d(K) and d(K')
+					vector<struct Data> &result);
+
+
+/************************************************************************/
 /*	1번 실험 - Cornerness 실험 코드
 /*	(양윤식)
 /************************************************************************/
 void CornernessTest(Mat &referenceImage, Mat &transformedImage,
 	vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &transformedKeyPoints,				// K and K'
 	vector<struct Data> &result);
+
+/************************************************************************/
+/*	저장된 영상과 변환행렬을 로드하는 코드
+/*	(양윤식)
+/************************************************************************/
+void LoadImages(Mat &referenceImage, vector<Mat> &transformedImages, vector<Mat> &matrices);

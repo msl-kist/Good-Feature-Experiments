@@ -10,7 +10,7 @@ void SelfSimilarityTest(Mat &referenceImage, Mat &transformedImage,												/
 {
 	for(int i=0; i<referenceKeyPoints.size(); ++i)
 	{
-		if(!IS_NULL(transformedKeyPoints[i]))				// TODO: NONE 정의
+		if(!IS_NULL(transformedKeyPoints[i]))
 		{
 			// 디스크립터 추출
 			Mat desc1;
