@@ -4,6 +4,8 @@
 #include <opencv2/opencv.hpp>
 #include "OpenCv2.4.5_libs.h"
 
+#include <opencv2/legacy/legacy.hpp>
+
 using namespace std;
 using namespace cv;
 
@@ -26,7 +28,7 @@ struct Data
 
 	int	cornerness;					// 실험 1) cornerness(n_exist)  - n_exist / n_transformed
 	vector<float>	selfSimilarity; // 실험 2) Self Similarity	- 개수: # of transformed images
-	map<int, int>					// 실험 3) Histogram			- MAP 자료형은 http://www.hanbit.co.kr/network/view.html?bi_id=1618 여기 참조하시오
+	map<int, int>	seperatibility;	// 실험 3) Histogram			- MAP 자료형은 http://www.hanbit.co.kr/network/view.html?bi_id=1618 여기 참조하시오
 };
 
 /************************************************************************/

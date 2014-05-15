@@ -66,6 +66,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SelfSimilarityTest.cpp" />
+    <ClCompile Include="Seperability.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="data_structure.h" />

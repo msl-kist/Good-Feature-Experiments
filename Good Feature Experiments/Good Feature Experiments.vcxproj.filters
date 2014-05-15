@@ -21,6 +21,9 @@
     <ClCompile Include="SelfSimilarityTest.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Seperability.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OpenCv2.4.5_libs.h">

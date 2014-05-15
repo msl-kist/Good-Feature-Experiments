@@ -8,6 +8,9 @@ void SelfSimilarityTest(Mat &referenceImage, Mat &transformedImage,												/
 						Mat &referenceDescriptors, Mat &transformedDescriptors,									// d(K) and d(K')
 						vector<struct Data> &result)
 {
+	BruteForceMatcher<Hamming> matcher; // recent matcher
+	vector<DMatch> matches_brisk;
+
 	for(int i=0; i<referenceKeyPoints.size(); ++i)
 	{
 		if(!IS_NULL(transformedKeyPoints[i]))
@@ -19,11 +22,10 @@ void SelfSimilarityTest(Mat &referenceImage, Mat &transformedImage,												/
 			desc2.push_back(transformedDescriptors.row(i));
 
 
-			/////TEST 중입니다///////
-			
+			//TODO: 거리구하기
+			matcher.match(desc1, desc2, matches_brisk);
 
-			// TODO: 거리구하기
-			float score = 0;
+			float score = matches_brisk[0].distance;
 
 			// result에 넣기
 			result[i].selfSimilarity.push_back(score);
