@@ -5,15 +5,11 @@ using namespace cv;
 #define SWAP(a, b) { int t; t = a; a = b; b = t; }
 
 
-void Seperability(Mat referenceImage, Mat transformedImage,								// I and T(I)
-	vector<KeyPoint> referenceKeyPoints, vector<KeyPoint> transformedKeypoints,				// K and K'
-	Mat referenceDescriptors, Mat transformedDescriptors,									// d(K) and d(K')
-	vector<struct Data> result)
+void SeperatibilityTest(vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &transformedKeyPoints,				// K and K'
+					Mat &referenceDescriptors, Mat &transformedDescriptors,									// d(K) and d(K')
+					BruteForceMatcher<Hamming> &matcher, vector<DMatch> &matches_brisk,
+					vector<struct Data> &result)
 {
-	BruteForceMatcher<Hamming> matcher; // recent matcher
-	vector<DMatch> matches_brisk;
-
-
 	for(int i=0; i<referenceKeyPoints.size(); ++i)
 	{
 		if(!IS_NULL(referenceDescriptors[i]))				//TODO: NONE 정의
@@ -22,7 +18,7 @@ void Seperability(Mat referenceImage, Mat transformedImage,								// I and T(I)
 			Mat desc1;
 			desc1.push_back(referenceDescriptors.row(i));
 
-			for(int j=0; j<transformedKeypoints.size(); ++j)
+			for(int j=0; j< transformedKeyPoints.size(); ++j)
 			{
 				if(!IS_NULL(transformedKeypoints[j]))				//TODO: NONE 정의
 				{

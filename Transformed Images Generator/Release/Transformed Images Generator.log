@@ -1,0 +1,39 @@
+﻿빌드 시작: 2014-05-16 오후 3:27:46
+     1>2 노드의 "D:\과제\[2013] KIST smartbooklet\소스코드\[KIST]openframeworks\of_v0.7.4_vs2010_release\apps\GoodFeature\Good-Feature-Experiments\Transformed Images Generator\Transformed Images Generator.vcxproj" 프로젝트(build 대상)입니다.
+     1>InitializeBuildStatus:
+         "AlwaysCreate"이(가) 지정되었기 때문에 "Release\Transformed Images Generator.unsuccessfulbuild"을(를) 만들고 있습니다.
+       ClCompile:
+         f:\Program files\Visual Studio 2010\VC\bin\CL.exe /c /IC:\OpenCV\build\include /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>main.cpp(22): warning C4244: '초기화 중' : 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>main.cpp(23): warning C4244: '초기화 중' : 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>main.cpp(44): warning C4244: '초기화 중' : 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>main.cpp(45): warning C4244: '초기화 중' : 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>main.cpp(49): warning C4244: '초기화 중' : 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>main.cpp(51): warning C4244: '인수' : 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>main.cpp(51): warning C4244: '인수' : 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>main.cpp(55): warning C4244: '=' : 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>main.cpp(56): warning C4244: '=' : 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>main.cpp(60): warning C4244: '인수' : 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>main.cpp(60): warning C4244: '인수' : 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>main.cpp(66): warning C4244: '인수' : 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>main.cpp(66): warning C4244: '인수' : 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>main.cpp(66): warning C4244: '인수' : 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>main.cpp(80): warning C4244: '초기화 중' : 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>main.cpp(82): warning C4244: '초기화 중' : 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>main.cpp(82): warning C4244: '+=' : 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+       Link:
+         f:\Program files\Visual Studio 2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\과제\[2013] KIST smartbooklet\소스코드\[KIST]openframeworks\of_v0.7.4_vs2010_release\apps\GoodFeature\Good-Feature-Experiments\Release\Transformed Images Generator.exe" /NOLOGO /LIBPATH:C:\OpenCV\build\x86\vc10\lib opencv_videostab245.lib opencv_video245.lib opencv_ts245.lib opencv_calib3d245.lib opencv_contrib245.lib opencv_core245.lib opencv_features2d245.lib opencv_flann245.lib opencv_gpu245.lib opencv_haartraining_engine.lib opencv_highgui245.lib opencv_imgproc245.lib opencv_legacy245.lib opencv_ml245.lib opencv_nonfree245.lib opencv_objdetect245.lib opencv_photo245.lib opencv_stitching245.lib opencv_superres245.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\Transformed Images Generator.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\과제\[2013] KIST smartbooklet\소스코드\[KIST]openframeworks\of_v0.7.4_vs2010_release\apps\GoodFeature\Good-Feature-Experiments\Release\Transformed Images Generator.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\과제\[2013] KIST smartbooklet\소스코드\[KIST]openframeworks\of_v0.7.4_vs2010_release\apps\GoodFeature\Good-Feature-Experiments\Release\Transformed Images Generator.lib" /MACHINE:X86 Release\main.obj
+         코드를 생성하고 있습니다.
+         코드를 생성했습니다.
+         Transformed Images Generator.vcxproj -> D:\과제\[2013] KIST smartbooklet\소스코드\[KIST]openframeworks\of_v0.7.4_vs2010_release\apps\GoodFeature\Good-Feature-Experiments\Release\Transformed Images Generator.exe
+       Manifest:
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\과제\[2013] KIST smartbooklet\소스코드\[KIST]openframeworks\of_v0.7.4_vs2010_release\apps\GoodFeature\Good-Feature-Experiments\Release\Transformed Images Generator.exe;#1" /manifest "Release\Transformed Images Generator.exe.intermediate.manifest"
+       FinalizeBuildStatus:
+         "Release\Transformed Images Generator.unsuccessfulbuild" 파일을 삭제하고 있습니다.
+         "Release\Transformed Images Generator.lastbuildstate"에 연결(touching)하고 있습니다.
+     1>"D:\과제\[2013] KIST smartbooklet\소스코드\[KIST]openframeworks\of_v0.7.4_vs2010_release\apps\GoodFeature\Good-Feature-Experiments\Transformed Images Generator\Transformed Images Generator.vcxproj" 프로젝트를 빌드했습니다(build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:00.94

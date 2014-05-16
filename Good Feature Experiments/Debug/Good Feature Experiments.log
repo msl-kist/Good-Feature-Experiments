@@ -1,0 +1,27 @@
+﻿빌드 시작: 2014-05-16 오후 3:34:11
+     1>2 노드의 "D:\과제\[2013] KIST smartbooklet\소스코드\[KIST]openframeworks\of_v0.7.4_vs2010_release\apps\GoodFeature\Good-Feature-Experiments\Good Feature Experiments\Good Feature Experiments.vcxproj" 프로젝트(rebuild 대상)입니다.
+     1>_PrepareForClean:
+         "Debug\Good Feature Experiments.lastbuildstate" 파일을 삭제하고 있습니다.
+       InitializeBuildStatus:
+         "Debug\Good Feature Experiments.unsuccessfulbuild"에 연결(touching)하고 있습니다.
+       ClCompile:
+         f:\Program files\Visual Studio 2010\VC\bin\CL.exe /c /IC:\OpenCV\build\include /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp SelfSimilarityTest.cpp Seperability.cpp
+         Seperability.cpp
+     1>d:\과제\[2013] kist smartbooklet\소스코드\[kist]openframeworks\of_v0.7.4_vs2010_release\apps\goodfeature\good-feature-experiments\good feature experiments\seperability.cpp(17): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+     1>d:\과제\[2013] kist smartbooklet\소스코드\[kist]openframeworks\of_v0.7.4_vs2010_release\apps\goodfeature\good-feature-experiments\good feature experiments\seperability.cpp(19): error C2676: 이항 '[' : 'cv::Mat'이(가) 이 연산자를 정의하지 않거나 미리 정의된 연산자에 허용되는 형식으로의 변환을 정의하지 않습니다.
+     1>d:\과제\[2013] kist smartbooklet\소스코드\[kist]openframeworks\of_v0.7.4_vs2010_release\apps\goodfeature\good-feature-experiments\good feature experiments\seperability.cpp(19): error C2228: '.pt' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+     1>d:\과제\[2013] kist smartbooklet\소스코드\[kist]openframeworks\of_v0.7.4_vs2010_release\apps\goodfeature\good-feature-experiments\good feature experiments\seperability.cpp(19): error C2228: '.x' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+     1>d:\과제\[2013] kist smartbooklet\소스코드\[kist]openframeworks\of_v0.7.4_vs2010_release\apps\goodfeature\good-feature-experiments\good feature experiments\seperability.cpp(19): error C2676: 이항 '[' : 'cv::Mat'이(가) 이 연산자를 정의하지 않거나 미리 정의된 연산자에 허용되는 형식으로의 변환을 정의하지 않습니다.
+     1>d:\과제\[2013] kist smartbooklet\소스코드\[kist]openframeworks\of_v0.7.4_vs2010_release\apps\goodfeature\good-feature-experiments\good feature experiments\seperability.cpp(19): error C2228: '.pt' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+     1>d:\과제\[2013] kist smartbooklet\소스코드\[kist]openframeworks\of_v0.7.4_vs2010_release\apps\goodfeature\good-feature-experiments\good feature experiments\seperability.cpp(19): error C2228: '.y' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+     1>d:\과제\[2013] kist smartbooklet\소스코드\[kist]openframeworks\of_v0.7.4_vs2010_release\apps\goodfeature\good-feature-experiments\good feature experiments\seperability.cpp(25): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+         SelfSimilarityTest.cpp
+     1>d:\과제\[2013] kist smartbooklet\소스코드\[kist]openframeworks\of_v0.7.4_vs2010_release\apps\goodfeature\good-feature-experiments\good feature experiments\selfsimilaritytest.cpp(14): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+         main.cpp
+     1>d:\과제\[2013] kist smartbooklet\소스코드\[kist]openframeworks\of_v0.7.4_vs2010_release\apps\goodfeature\good-feature-experiments\good feature experiments\main.cpp(25): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+         코드를 생성하고 있습니다...
+     1>"D:\과제\[2013] KIST smartbooklet\소스코드\[KIST]openframeworks\of_v0.7.4_vs2010_release\apps\GoodFeature\Good-Feature-Experiments\Good Feature Experiments\Good Feature Experiments.vcxproj" 프로젝트를 빌드했습니다(rebuild 대상). - 실패
+
+빌드하지 못했습니다.
+
+경과 시간: 00:00:02.17

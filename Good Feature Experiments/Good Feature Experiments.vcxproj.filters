@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="brisk">
+      <UniqueIdentifier>{d1965161-f185-4e36-ba4e-e4a5ce95130c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -24,6 +27,12 @@
     <ClCompile Include="Seperability.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="brisk\brisk.cpp">
+      <Filter>brisk</Filter>
+    </ClCompile>
+    <ClCompile Include="brisk\demo.cpp">
+      <Filter>brisk</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OpenCv2.4.5_libs.h">
@@ -31,6 +40,27 @@
     </ClInclude>
     <ClInclude Include="data_structure.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="brisk\brisk.h">
+      <Filter>brisk</Filter>
+    </ClInclude>
+    <ClInclude Include="brisk\GroundTruth.hpp">
+      <Filter>brisk</Filter>
+    </ClInclude>
+    <ClInclude Include="brisk\hammingsse.hpp">
+      <Filter>brisk</Filter>
+    </ClInclude>
+    <ClInclude Include="brisk\Matcher.h">
+      <Filter>brisk</Filter>
+    </ClInclude>
+    <ClInclude Include="brisk\MatchVerifier.hpp">
+      <Filter>brisk</Filter>
+    </ClInclude>
+    <ClInclude Include="brisk\projection.h">
+      <Filter>brisk</Filter>
+    </ClInclude>
+    <ClInclude Include="brisk\utils.hpp">
+      <Filter>brisk</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
