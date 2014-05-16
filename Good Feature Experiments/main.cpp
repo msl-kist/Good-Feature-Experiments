@@ -1,8 +1,14 @@
 #include "data_structure.h"
 
+<<<<<<< HEAD
 #include "brisk/brisk.h"
 #include "brisk/Matcher.h"
 #include "brisk/MatchVerifier.hpp"
+=======
+#include "brisk/brisk.h"
+#include "brisk/Matcher.h"
+#include "brisk/MatchVerifier.hpp"
+>>>>>>> 398c41be82572b52a10303bd237213558dbc0810
 #include "brisk/GroundTruth.hpp"
 
 int main()
