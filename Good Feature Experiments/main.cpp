@@ -1,3 +1,5 @@
+#include <conio.h>
+
 #include "data_structure.h"
 
 #include "brisk/brisk.h"
@@ -69,5 +71,7 @@ void main()
 	// TODO: (종훈) 파일 저장
 
 	//return 0;
+
+	getch();
 }
 

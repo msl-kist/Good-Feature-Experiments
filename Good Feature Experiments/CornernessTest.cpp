@@ -78,5 +78,5 @@ void CornernessTest(vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &tran
 		result.data.push_back(temp);
 	}
 
-	cout<<t << " " << f<<endl;
+	cout<< angle<< " " << scale << " " << t << " " << f<<endl;
 }
