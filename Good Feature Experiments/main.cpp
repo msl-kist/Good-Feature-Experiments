@@ -1,25 +1,16 @@
 #include "data_structure.h"
 
-<<<<<<< HEAD
 #include "brisk/brisk.h"
 #include "brisk/Matcher.h"
 #include "brisk/MatchVerifier.hpp"
-=======
-#include "brisk/brisk.h"
-#include "brisk/Matcher.h"
-#include "brisk/MatchVerifier.hpp"
->>>>>>> 398c41be82572b52a10303bd237213558dbc0810
 #include "brisk/GroundTruth.hpp"
 
-int main()
+void main()
 {
 	Mat	referenceImage;
 	vector<Mat> transformedImages;
 
-	vector<Mat> matrices;
-
-	// 먼저 영상들을 로드한다.
-	LoadImages(referenceImage, transformedImages, matrices);
+	int width, height;
 
 	// TODO: (종훈) Reference 영상을 처리하자
 	//==============================================================
@@ -35,32 +26,35 @@ int main()
 	vector<Mat>	transformedDescriptors;
 
 	// 결과 저장 자료형
-	vector<struct Data> result;
+	vector<struct ImageData> result;
 
-	for(int i=0; i<transformedImages.size();++i)
+	// 먼저 영상들을 로드한다.
+	LoadData(referenceKeyPoints, transformedKeyPoints, referenceDescriptor, transformedDescriptors, result);
+	LoadImage(1,width,height);
+
+	for(int i=0; i<result.size();++i)
 	{
-		Mat &transformedImage = transformedImages[i];
+		//Mat &transformedImage = transformedImages[i];
 
 		// 1번 실험
-		CornernessTest(	referenceImage, 
-						transformedImage,
-						referenceKeyPoints, 
+		CornernessTest(	referenceKeyPoints, 
 						transformedKeyPoints[i],				// K and K'
-						matrices[i], 
-						result);
-
+						transformedDescriptors[i],
+						result[i],width,height);
+		/*
 		// TODO: (종훈) 변환 이미지에 대한 디스크립터 생성
 		descriptorExtractor_brisk->compute(referenceImage, referenceKeyPoints, referenceDescriptor);
 		for(int i = 0; i<transformedImages.size(); i++)
 			descriptorExtractor_brisk->compute(transformedImages[i], transformedKeyPoints[i], transformedDescriptors[i]);
-
+		*/
+		
 		// 2번 실험
 		SelfSimilarityTest(	referenceKeyPoints,
 							transformedKeyPoints[i],
 							referenceDescriptor,
 							transformedDescriptors[i],
 							matcher, matches_brisk,
-							result);
+							result[i].data);
 
 		// 3번 실험
 		SeperatibilityTest(	referenceKeyPoints,
@@ -68,11 +62,12 @@ int main()
 							referenceDescriptor,
 							transformedDescriptors[i],
 							matcher, matches_brisk,
-							result);
+							result[i].data);
+							
 	}
 
 	// TODO: (종훈) 파일 저장
 
-	return 0;
+	//return 0;
 }
 

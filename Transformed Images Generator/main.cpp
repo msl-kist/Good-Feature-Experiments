@@ -5,10 +5,18 @@
 
 #include <stdio.h>
 
+#include <opencv2/legacy/legacy.hpp>
 #include <opencv2/opencv.hpp>
+#include <opencv2/gpu/gpu.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/calib3d/calib3d.hpp>
+#include <opencv2/features2d/features2d.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
+
 #include "OpenCv2.4.5_libs.h"
 #include "value.h"
-
+#include "brisk/brisk.h"
 using namespace cv;
 using namespace std;
 
@@ -72,21 +80,58 @@ IplImage *rotateImage(const IplImage *src, int angleDegrees, double scale)
 	return imageRotated;
 }
 
+void computeDescriptors(FileStorage* fs,IplImage* image,Ptr<FeatureDetector>& detector, cv::Ptr<cv::DescriptorExtractor>& descriptor, int imageNum,float scale, int angle, int gaussian)
+{
+	char name[100];
+	vector<cv::KeyPoint> keyPoints;
+
+	vector<cv::KeyPoint> keyPoints_brisk;
+	Mat descriptors;
+
+	Mat mat = Mat(image);
+	Mat mat_gray(mat.size(),CV_8U);
+
+	cv::cvtColor(mat, mat_gray, CV_BGR2GRAY);
+
+	detector->detect(mat_gray, keyPoints);
+	descriptor->compute(mat_gray, keyPoints, descriptors);
+
+	sprintf(name, "K_%d_%d_%d_%d",imageNum,(int)(scale*10),angle,gaussian);
+	write(*fs, name, keyPoints);
+	sprintf(name, "D_%d_%d_%d_%d",imageNum,(int)(scale*10),angle,gaussian);
+	write(*fs, name, descriptors);
+	
+}
+
+
 
 int main()
 {
 	char filename[100];
-	char dbFilename[100];
+	char dbFilename[100]={0,};
 
 	IplImage* rotImage = NULL;
 	IplImage* gaussianImage = NULL;
 
-	int maxScale = MAX_SCALE;
+	float maxScale = MAX_SCALE;
 	int maxDBSize = MAX_DB_SIZE;
 
+	FileStorage fs("Data.xml",FileStorage::WRITE);
+	
+	//brisk 설정
+	Ptr<FeatureDetector> detector;
+	cv::Ptr<cv::DescriptorExtractor> descriptor;
+
+	detector = new BriskFeatureDetector(130, 5);
+	descriptor = new cv::BriskDescriptorExtractor();
+	memset(dbFilename, 0x00, sizeof(dbFilename));
+	
+	
 	for(int i = 0 ; i < maxDBSize; i++ ){
 		sprintf(dbFilename,"dbImage/%d.jpg", i+1);	
 		IplImage *dbImage = cvLoadImage(dbFilename);
+
+		computeDescriptors( &fs, dbImage, detector,  descriptor, i+1, -1, -1, -1);
 		
 		for(float scale = MIN_SCALE; scale <= maxScale; scale += SCALE_INCREASE){			//scale 변화
 			for(int angle = 0; angle < 360; angle += ANGLE_INCREASE){						//angle 변화
@@ -94,18 +139,21 @@ int main()
 				rotImage = rotateImage(dbImage,angle,scale);
 
 				//Save Image (원본)
-				sprintf(filename,"testset/%d_%.1f_%d_%d.png", 1,scale,angle,0);	
+				sprintf(filename,"testset/%d_%.1f_%d_%d.png", i+1,scale,angle,0);	
 				cvSaveImage(filename,rotImage);
+				computeDescriptors( &fs, rotImage, detector,  descriptor, i+1, scale, angle, 0);
+
 				cout<<filename << " is saved."<<endl;
 
 				//Gaussian blur 총 3번을 한다.
-				for(int i = 3 ; i < 8;i+=2){
+				for(int g = 3 ; g < 8;g+=2){
 					gaussianImage = cvCreateImage(cvSize(rotImage->width, rotImage->height), IPL_DEPTH_8U, 3);
-					cvSmooth(rotImage,gaussianImage,CV_GAUSSIAN,i,i);
+					cvSmooth(rotImage,gaussianImage,CV_GAUSSIAN,g,g);
 
 					//Save Image (Gaussian)
-					sprintf(filename,"testset/%d_%.1f_%d_%d.png", 1,scale,angle,i);	
+					sprintf(filename,"testset/%d_%.1f_%d_%d.png", 1,scale,angle,g);	
 					cvSaveImage(filename,gaussianImage);
+					computeDescriptors( &fs, gaussianImage, detector,  descriptor, i+1, scale, angle, g);
 
 					cvReleaseImage(&gaussianImage);
 

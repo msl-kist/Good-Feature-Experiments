@@ -41,7 +41,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(OPEN_CV_245_INCLUDE);</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(OPEN_CV_245_INCLUDE)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -64,13 +64,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="agast\agast5_8.cc" />
+    <ClCompile Include="agast\agast5_8_nms.cc" />
+    <ClCompile Include="agast\agast7_12d.cc" />
+    <ClCompile Include="agast\agast7_12d_nms.cc" />
+    <ClCompile Include="agast\agast7_12s.cc" />
+    <ClCompile Include="agast\agast7_12s_nms.cc" />
+    <ClCompile Include="agast\AstDetector.cc" />
+    <ClCompile Include="agast\nonMaximumSuppression.cc" />
+    <ClCompile Include="agast\oast9_16.cc" />
+    <ClCompile Include="agast\oast9_16_nms.cc" />
     <ClCompile Include="brisk\brisk.cpp" />
-    <ClCompile Include="brisk\demo.cpp" />
+    <ClCompile Include="CornernessTest.cpp" />
+    <ClCompile Include="LoadImageData.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SelfSimilarityTest.cpp" />
     <ClCompile Include="Seperability.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Transformed Images Generator\value.h" />
+    <ClInclude Include="agast\agast5_8.h" />
+    <ClInclude Include="agast\agast7_12d.h" />
+    <ClInclude Include="agast\agast7_12s.h" />
+    <ClInclude Include="agast\AstDetector.h" />
+    <ClInclude Include="agast\cvWrapper.h" />
+    <ClInclude Include="agast\oast9_16.h" />
     <ClInclude Include="brisk\brisk.h" />
     <ClInclude Include="brisk\GroundTruth.hpp" />
     <ClInclude Include="brisk\hammingsse.hpp" />

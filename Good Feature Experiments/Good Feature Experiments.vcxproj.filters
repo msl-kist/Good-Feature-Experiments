@@ -16,6 +16,9 @@
     <Filter Include="brisk">
       <UniqueIdentifier>{d1965161-f185-4e36-ba4e-e4a5ce95130c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="agast">
+      <UniqueIdentifier>{0c670fdb-9b83-4e5a-b02a-ae27e2909717}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -30,8 +33,41 @@
     <ClCompile Include="brisk\brisk.cpp">
       <Filter>brisk</Filter>
     </ClCompile>
-    <ClCompile Include="brisk\demo.cpp">
-      <Filter>brisk</Filter>
+    <ClCompile Include="agast\agast5_8.cc">
+      <Filter>agast</Filter>
+    </ClCompile>
+    <ClCompile Include="agast\agast5_8_nms.cc">
+      <Filter>agast</Filter>
+    </ClCompile>
+    <ClCompile Include="agast\agast7_12d.cc">
+      <Filter>agast</Filter>
+    </ClCompile>
+    <ClCompile Include="agast\agast7_12d_nms.cc">
+      <Filter>agast</Filter>
+    </ClCompile>
+    <ClCompile Include="agast\agast7_12s.cc">
+      <Filter>agast</Filter>
+    </ClCompile>
+    <ClCompile Include="agast\agast7_12s_nms.cc">
+      <Filter>agast</Filter>
+    </ClCompile>
+    <ClCompile Include="agast\AstDetector.cc">
+      <Filter>agast</Filter>
+    </ClCompile>
+    <ClCompile Include="agast\nonMaximumSuppression.cc">
+      <Filter>agast</Filter>
+    </ClCompile>
+    <ClCompile Include="agast\oast9_16.cc">
+      <Filter>agast</Filter>
+    </ClCompile>
+    <ClCompile Include="agast\oast9_16_nms.cc">
+      <Filter>agast</Filter>
+    </ClCompile>
+    <ClCompile Include="CornernessTest.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadImageData.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +97,27 @@
     </ClInclude>
     <ClInclude Include="brisk\utils.hpp">
       <Filter>brisk</Filter>
+    </ClInclude>
+    <ClInclude Include="agast\agast5_8.h">
+      <Filter>agast</Filter>
+    </ClInclude>
+    <ClInclude Include="agast\agast7_12d.h">
+      <Filter>agast</Filter>
+    </ClInclude>
+    <ClInclude Include="agast\agast7_12s.h">
+      <Filter>agast</Filter>
+    </ClInclude>
+    <ClInclude Include="agast\AstDetector.h">
+      <Filter>agast</Filter>
+    </ClInclude>
+    <ClInclude Include="agast\cvWrapper.h">
+      <Filter>agast</Filter>
+    </ClInclude>
+    <ClInclude Include="agast\oast9_16.h">
+      <Filter>agast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Transformed Images Generator\value.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

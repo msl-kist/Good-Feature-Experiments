@@ -13,10 +13,49 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="brisk">
+      <UniqueIdentifier>{fabdaea1-a5a4-420a-99e5-a1b6fe8a205b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="agast">
+      <UniqueIdentifier>{ee86a4fa-c81b-4168-bf70-71f595e12460}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="brisk\brisk.cpp">
+      <Filter>brisk</Filter>
+    </ClCompile>
+    <ClCompile Include="agast\agast5_8.cc">
+      <Filter>agast</Filter>
+    </ClCompile>
+    <ClCompile Include="agast\agast5_8_nms.cc">
+      <Filter>agast</Filter>
+    </ClCompile>
+    <ClCompile Include="agast\agast7_12d.cc">
+      <Filter>agast</Filter>
+    </ClCompile>
+    <ClCompile Include="agast\agast7_12d_nms.cc">
+      <Filter>agast</Filter>
+    </ClCompile>
+    <ClCompile Include="agast\agast7_12s.cc">
+      <Filter>agast</Filter>
+    </ClCompile>
+    <ClCompile Include="agast\agast7_12s_nms.cc">
+      <Filter>agast</Filter>
+    </ClCompile>
+    <ClCompile Include="agast\AstDetector.cc">
+      <Filter>agast</Filter>
+    </ClCompile>
+    <ClCompile Include="agast\nonMaximumSuppression.cc">
+      <Filter>agast</Filter>
+    </ClCompile>
+    <ClCompile Include="agast\oast9_16.cc">
+      <Filter>agast</Filter>
+    </ClCompile>
+    <ClCompile Include="agast\oast9_16_nms.cc">
+      <Filter>agast</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -25,6 +64,45 @@
     </ClInclude>
     <ClInclude Include="value.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="brisk\brisk.h">
+      <Filter>brisk</Filter>
+    </ClInclude>
+    <ClInclude Include="brisk\GroundTruth.hpp">
+      <Filter>brisk</Filter>
+    </ClInclude>
+    <ClInclude Include="brisk\hammingsse.hpp">
+      <Filter>brisk</Filter>
+    </ClInclude>
+    <ClInclude Include="brisk\Matcher.h">
+      <Filter>brisk</Filter>
+    </ClInclude>
+    <ClInclude Include="brisk\MatchVerifier.hpp">
+      <Filter>brisk</Filter>
+    </ClInclude>
+    <ClInclude Include="brisk\projection.h">
+      <Filter>brisk</Filter>
+    </ClInclude>
+    <ClInclude Include="brisk\utils.hpp">
+      <Filter>brisk</Filter>
+    </ClInclude>
+    <ClInclude Include="agast\agast5_8.h">
+      <Filter>agast</Filter>
+    </ClInclude>
+    <ClInclude Include="agast\agast7_12d.h">
+      <Filter>agast</Filter>
+    </ClInclude>
+    <ClInclude Include="agast\agast7_12s.h">
+      <Filter>agast</Filter>
+    </ClInclude>
+    <ClInclude Include="agast\AstDetector.h">
+      <Filter>agast</Filter>
+    </ClInclude>
+    <ClInclude Include="agast\cvWrapper.h">
+      <Filter>agast</Filter>
+    </ClInclude>
+    <ClInclude Include="agast\oast9_16.h">
+      <Filter>agast</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

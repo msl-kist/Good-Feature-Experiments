@@ -12,7 +12,7 @@
 #define ANGLE_INCREASE 10
 
 #define MIN_SCALE 0.5
-#define MAX_SCALE 2.0
+#define MAX_SCALE 0.5
 #define SCALE_INCREASE 0.1
 
 
