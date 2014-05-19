@@ -34,16 +34,17 @@ struct Data
 /************************************************************************/
 /*TODO: (채승호) 	2번 실험 - Self Similarity Test 실험 코드	
 /************************************************************************/
-void SelfSimilarityTest(Mat &referenceImage, Mat &transformedImage,												// I and T(I)
-	vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &transformedKeyPoints,				// K and K'
-	Mat &referenceDescriptors, Mat &transformedDescriptors,									// d(K) and d(K')
-	vector<struct Data> &result);
+void SelfSimilarityTest(vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &transformedKeyPoints,				// K and K'
+					Mat &referenceDescriptors, Mat &transformedDescriptors,									// d(K) and d(K')
+					BruteForceMatcher<Hamming> &matcher, vector<DMatch> &matches_brisk,
+					vector<struct Data> &result);
 
 /************************************************************************/
 /*TODO: (채승호) 	3번 실험 - Seperatibility 실험 코드
 /************************************************************************/
 void SeperatibilityTest(vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &transformedKeyPoints,				// K and K'
 					Mat &referenceDescriptors, Mat &transformedDescriptors,									// d(K) and d(K')
+					BruteForceMatcher<Hamming> &matcher, vector<DMatch> &matches_brisk,
 					vector<struct Data> &result);
 
 

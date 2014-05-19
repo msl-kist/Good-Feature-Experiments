@@ -1,5 +1,15 @@
 #include "data_structure.h"
 
+<<<<<<< HEAD
+#include "brisk/brisk.h"
+#include "brisk/Matcher.h"
+#include "brisk/MatchVerifier.hpp"
+=======
+#include "brisk/brisk.h"
+#include "brisk/Matcher.h"
+#include "brisk/MatchVerifier.hpp"
+>>>>>>> 398c41be82572b52a10303bd237213558dbc0810
+#include "brisk/GroundTruth.hpp"
 
 int main()
 {
@@ -15,6 +25,11 @@ int main()
 	//==============================================================
 	vector<KeyPoint> referenceKeyPoints;
 	vector<vector<KeyPoint>> transformedKeyPoints;
+
+	// Descriptor, Matcher 변수
+	Ptr<DescriptorExtractor> descriptorExtractor_brisk;	
+	BruteForceMatcher<Hamming> matcher; // recent matcher
+	vector<DMatch> matches_brisk;
 
 	Mat referenceDescriptor;
 	vector<Mat>	transformedDescriptors;
@@ -35,15 +50,16 @@ int main()
 						result);
 
 		// TODO: (종훈) 변환 이미지에 대한 디스크립터 생성
-		//--------------------------------------------------------------
+		descriptorExtractor_brisk->compute(referenceImage, referenceKeyPoints, referenceDescriptor);
+		for(int i = 0; i<transformedImages.size(); i++)
+			descriptorExtractor_brisk->compute(transformedImages[i], transformedKeyPoints[i], transformedDescriptors[i]);
 
 		// 2번 실험
-		SelfSimilarityTest(	referenceImage,
-							transformedImage,
-							referenceKeyPoints,
+		SelfSimilarityTest(	referenceKeyPoints,
 							transformedKeyPoints[i],
 							referenceDescriptor,
 							transformedDescriptors[i],
+							matcher, matches_brisk,
 							result);
 
 		// 3번 실험
@@ -51,6 +67,7 @@ int main()
 							transformedKeyPoints[i],
 							referenceDescriptor,
 							transformedDescriptors[i],
+							matcher, matches_brisk,
 							result);
 	}
 
