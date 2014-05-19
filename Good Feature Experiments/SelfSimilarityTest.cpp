@@ -11,13 +11,13 @@ void SelfSimilarityTest(vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &
 {
 	for(int i=0; i<referenceKeyPoints.size(); ++i)
 	{
-		if(!IS_NULL(result[i].keypoint))
+		if(!IS_NULL(transformedKeyPoints[i]))
 		{
 			// 디스크립터 추출
 			Mat desc1;
 			desc1.push_back(referenceDescriptors.row(i));
 			Mat desc2;
-			desc2.push_back(result[i].descriptor);
+			desc2.push_back(transformedDescriptors.row(i));
 
 
 			//TODO: 거리구하기
