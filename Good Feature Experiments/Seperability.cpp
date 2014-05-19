@@ -31,9 +31,6 @@ void SeperatibilityTest(vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &
 
 					float score = matches_brisk[0].distance;
 
-					// result¿¡ ³Ö±â
-					result[i].selfSimilarity.push_back(score);
-
 					//insertionSort(result[i * referenceKeyPoints.size() + j].selfSimilarity, result[i * referenceKeyPoints.size() + j].selfSimilarity.size());
 					result[i].seperatibility[(int)score]++;
 				}
