@@ -28,21 +28,25 @@ void main()
 	vector<Mat>	transformedDescriptors;
 
 	// 결과 저장 자료형
-	vector<struct ImageData> result;
+	vector<struct Data> result;
+	vector<struct ImageData> imageData;
 
 	// 먼저 영상들을 로드한다.
-	LoadData(referenceKeyPoints, transformedKeyPoints, referenceDescriptor, transformedDescriptors, result);
+	LoadData(referenceKeyPoints, transformedKeyPoints, referenceDescriptor, transformedDescriptors, result, imageData);
 	LoadImage(1,width,height);
 
-	for(int i=0; i<result.size();++i)
+	for(int i=0; i<imageData.size();++i)
 	{
 		//Mat &transformedImage = transformedImages[i];
+		vector<KeyPoint> tempKeypoint;
 
 		// 1번 실험
 		CornernessTest(	referenceKeyPoints, 
 						transformedKeyPoints[i],				// K and K'
 						transformedDescriptors[i],
-						result[i],width,height);
+						imageData[i],result, tempKeypoint,width,height);
+
+
 		/*
 		// TODO: (종훈) 변환 이미지에 대한 디스크립터 생성
 		descriptorExtractor_brisk->compute(referenceImage, referenceKeyPoints, referenceDescriptor);
@@ -56,8 +60,8 @@ void main()
 							referenceDescriptor,
 							transformedDescriptors[i],
 							matcher, matches_brisk,
-							result[i].data);
-
+							result);
+		/*
 		// 3번 실험
 		SeperatibilityTest(	referenceKeyPoints,
 							transformedKeyPoints[i],
@@ -65,7 +69,7 @@ void main()
 							transformedDescriptors[i],
 							matcher, matches_brisk,
 							result[i].data);
-							
+		*/					
 	}
 
 	// TODO: (종훈) 파일 저장

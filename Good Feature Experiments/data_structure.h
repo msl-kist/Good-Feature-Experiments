@@ -43,7 +43,6 @@ struct ImageData
 	int angle;
 	int gaussian;
 
-	vector<struct Data> data;
 };
 
 /************************************************************************/
@@ -67,13 +66,14 @@ void SeperatibilityTest(vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &
 /*TODO: (양윤식) 	1번 실험 - Cornerness 실험 코드
 /************************************************************************/
 void CornernessTest(vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &transformedKeyPoints, 				// K and K'
-	Mat &transformedDescriptors,struct ImageData &result, int width, int height);
+	Mat &transformedDescriptors,struct ImageData &imageData, vector<struct Data>& result, 
+	vector<KeyPoint> &cornerTestKeyPoints, int width, int height);
 
 /************************************************************************/
 /*TODO: (양윤식) 	저장된 영상과 변환행렬을 로드하는 코드
 /************************************************************************/
 void LoadData(vector<KeyPoint> &referenceKeyPoints, vector<vector<KeyPoint>> &transformedKeyPoints,
-	Mat &referenceDescriptor, vector<Mat> &transformedDescriptors, vector<struct ImageData> &result);
+	Mat &referenceDescriptor, vector<Mat> &transformedDescriptors, vector<struct Data> &result, vector<struct ImageData> &imageData);
 
 /************************************************************************/
 /*TODO: (양윤식) 	저장된 영상과 변환행렬을 로드하는 코드

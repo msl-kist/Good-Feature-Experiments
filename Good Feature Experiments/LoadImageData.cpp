@@ -1,15 +1,9 @@
 #include "data_structure.h"
 
-void save(FileStorage fs,vector<vector<KeyPoint>> &transformedKeyPoints,vector<Mat> &transformedDescriptors, vector<struct ImageData> &result, int imageNum, float scale, int angle, int gaussian, int cnt){
-	struct ImageData data ;
+void save(FileStorage fs,vector<vector<KeyPoint>> &transformedKeyPoints,vector<Mat> &transformedDescriptors, int imageNum, float scale, int angle, int gaussian, int cnt){
 	vector<KeyPoint> keypointTemp;
 	Mat descriptorTemp;
 	char name[100];
-
-	data.angle = angle;
-	data.scale = scale;
-	data.dbImageNum = imageNum;
-	data.gaussian = gaussian;
 
 	sprintf(name, "K_%d_%d_%d_%d",imageNum,(int)(scale*10),angle,gaussian);
 	FileNode features = fs[name];
@@ -20,12 +14,12 @@ void save(FileStorage fs,vector<vector<KeyPoint>> &transformedKeyPoints,vector<M
 
 	transformedKeyPoints.push_back(keypointTemp);
 	transformedDescriptors.push_back(descriptorTemp);
-
-	result.push_back(data);
 	return;
 }
 
-void LoadData(vector<KeyPoint> &referenceKeyPoints, vector<vector<KeyPoint>> &transformedKeyPoints, Mat &referenceDescriptor, vector<Mat> &transformedDescriptors, vector<struct ImageData> &result){
+void LoadData(vector<KeyPoint> &referenceKeyPoints, vector<vector<KeyPoint>> &transformedKeyPoints, Mat &referenceDescriptor, 
+	vector<Mat> &transformedDescriptors, vector<struct Data> &result, vector<struct ImageData> &imageData)
+{
 	int cnt = 0;	
 	char name[100];
 	
@@ -49,6 +43,15 @@ void LoadData(vector<KeyPoint> &referenceKeyPoints, vector<vector<KeyPoint>> &tr
 	sprintf(name, "D_%d_%d_%d_%d",1, -10, -1, -1);
 	fs[name] >> referenceDescriptor;
 
+	for(int i = 0; i < referenceKeyPoints.size(); i++)
+	{
+		struct Data data ;
+		data.keypoint = referenceKeyPoints.at(i);
+		data.descriptor = referenceDescriptor.row(i);
+		data.cornerness = 0;
+		result.push_back(data);
+	}
+
 
 	//Read transformed image keypoints and descriptors
 	for(int imageNum = 1 ; imageNum <= maxDBSize; imageNum++){
@@ -57,8 +60,13 @@ void LoadData(vector<KeyPoint> &referenceKeyPoints, vector<vector<KeyPoint>> &tr
 				for(int gaussian = 0; gaussian < 8; gaussian+=2){
 					if(gaussian == 2)
 						gaussian++;
-
-					save(fs, transformedKeyPoints,transformedDescriptors, result, imageNum, scale, angle, gaussian,cnt);
+					struct ImageData data;
+					data.angle = angle;
+					data.dbImageNum = imageNum;
+					data.gaussian = gaussian;
+					data.scale = scale;
+					imageData.push_back(data);
+					save(fs, transformedKeyPoints,transformedDescriptors, imageNum, scale, angle, gaussian,cnt);
 					cnt++;
 				}
 			}
