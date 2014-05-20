@@ -18,21 +18,18 @@ void SeperatibilityTest(vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &
 			Mat desc1;
 			desc1.push_back(referenceDescriptors.row(i));
 
-			for(int j=0; j< result.size() ; ++j)
+			for(int j=0; j< transformedKeyPoints.size() ; ++j)
 			{
-				if(!IS_NULL(result[j].keypoint))				//TODO: NONE 정의
+				if(!IS_NULL(transformedKeyPoints[j]))				//TODO: NONE 정의
 				{
 					// 디스크립터 추출
 					Mat desc2;
-					desc2.push_back(result[j].descriptor);
+					desc2.push_back(transformedDescriptors.row(j));
 
 					//TODO: 거리구하기
 					matcher.match(desc1, desc2, matches_brisk);
 
 					float score = matches_brisk[0].distance;
-
-					// result에 넣기
-					result[i].selfSimilarity.push_back(score);
 
 					//insertionSort(result[i * referenceKeyPoints.size() + j].selfSimilarity, result[i * referenceKeyPoints.size() + j].selfSimilarity.size());
 					result[i].seperatibility[(int)score]++;
