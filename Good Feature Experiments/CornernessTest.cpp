@@ -11,8 +11,9 @@ CvPoint rotatePoint;
 float scale;
 int angle;
 
-bool getRotatedPoint(KeyPoint refernceKeyPoint, vector<KeyPoint> &transformedKeyPoints, 
-	struct ImageData &imageData,int width, int height, CvPoint center,Mat &transformedDescriptors, vector<KeyPoint> &cornerTestKeyPoints)
+bool getRotatedPoint(KeyPoint refernceKeyPoint, Mat &refernceDescriptors, vector<KeyPoint> &transformedKeyPoints, 
+	struct ImageData &imageData,int width, int height, CvPoint center,Mat &transformedDescriptors, 
+		vector<KeyPoint> &cornerTestKeyPoints, Mat &cornerTestDescriptors)
 {
 
 	CvPoint point = cvPoint(refernceKeyPoint.pt.x* imageData.scale + (center.x - (width * imageData.scale / 2)) , refernceKeyPoint.pt.y*imageData.scale + (center.y - (height * imageData.scale / 2)));
@@ -37,17 +38,20 @@ bool getRotatedPoint(KeyPoint refernceKeyPoint, vector<KeyPoint> &transformedKey
 		//		cvReleaseImage(&image);
 		if(calcDistance(rotatePoint,transformedKeyPoints.at(i)) < 2){
 			cornerTestKeyPoints.push_back(transformedKeyPoints.at(i));
+			cornerTestDescriptors.push_back(transformedDescriptors.row(i));
 			return true;
 		}
 	}	
 	cornerTestKeyPoints.push_back(NULL_KEYPOINT);
+	cornerTestDescriptors.push_back(refernceDescriptors.row(0));
 
 	return false;
 }
 
-void CornernessTest(vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &transformedKeyPoints 				// K and K'
-	,Mat &transformedDescriptors, struct ImageData &imageData, vector<struct Data>& result, 
-	vector<KeyPoint> &cornerTestKeyPoints, int width, int height)
+void CornernessTest(vector<KeyPoint> &referenceKeyPoints, Mat &referenceDescriptors, 
+	vector<KeyPoint> &transformedKeyPoints ,Mat &transformedDescriptors, struct ImageData &imageData, 
+	vector<struct Data>& result, vector<KeyPoint> &cornerTestKeyPoints, Mat &cornerTestDescriptors, 
+	int width, int height)
 {
 	int t = 0;
 	int f = 0;
@@ -65,7 +69,7 @@ void CornernessTest(vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &tran
 
 	for(int i = 0; i < referenceKeyPoints.size(); i++){
 
-		if(getRotatedPoint(referenceKeyPoints.at(i),transformedKeyPoints,imageData,width,height,center,transformedDescriptors, cornerTestKeyPoints)){
+		if(getRotatedPoint(referenceKeyPoints.at(i), referenceDescriptors, transformedKeyPoints,imageData, width, height, center, transformedDescriptors, cornerTestKeyPoints, cornerTestDescriptors)){
 			result[i].cornerness++;
 			t++;
 		}

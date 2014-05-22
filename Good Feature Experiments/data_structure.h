@@ -27,13 +27,14 @@ struct Data
 	cv::KeyPoint	keypoint;
 	cv::Mat			descriptor;
 
+	int matchScore;					// Matching count
 	int	cornerness;					// 실험 1) cornerness(n_exist)  - n_exist / n_transformed
 	vector<float>	selfSimilarity; // 실험 2) Self Similarity	- 개수: # of transformed images
 	map<int, int>	seperatibility;	// 실험 3) Histogram			- MAP 자료형은 http://www.hanbit.co.kr/network/view.html?bi_id=1618 여기 참조하시오
 };
 
 /************************************************************************/
-/*	각 Image에 저장되는 데이터 형										*/
+/*	각 Image에 저장되는 데이터 형										    */
 /*	(양윤식)																*/
 /************************************************************************/
 struct ImageData
@@ -65,9 +66,10 @@ void SeperatibilityTest(vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &
 /************************************************************************/
 /*TODO: (양윤식) 	1번 실험 - Cornerness 실험 코드
 /************************************************************************/
-void CornernessTest(vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &transformedKeyPoints, 				// K and K'
-	Mat &transformedDescriptors,struct ImageData &imageData, vector<struct Data>& result, 
-	vector<KeyPoint> &cornerTestKeyPoints, int width, int height);
+void CornernessTest(vector<KeyPoint> &referenceKeyPoints, Mat &referenceDescriptors, 
+	vector<KeyPoint> &transformedKeyPoints ,Mat &transformedDescriptors, struct ImageData &imageData, 
+	vector<struct Data>& result, vector<KeyPoint> &cornerTestKeyPoints, Mat &cornerTestDescriptors, 
+	int width, int height);
 
 /************************************************************************/
 /*TODO: (양윤식) 	저장된 영상과 변환행렬을 로드하는 코드
@@ -79,3 +81,15 @@ void LoadData(vector<KeyPoint> &referenceKeyPoints, vector<vector<KeyPoint>> &tr
 /*TODO: (양윤식) 	저장된 영상과 변환행렬을 로드하는 코드
 /************************************************************************/
 void LoadImage(int num, int& width, int& height);
+
+/************************************************************************/
+/*TODO: (양윤식) 	Data 저장
+/************************************************************************/
+void SaveData(vector<struct Data>& result);
+
+/************************************************************************/
+/*TODO: (양윤식) 	Matching count 
+/************************************************************************/
+void MatchingCountTest(vector<KeyPoint> &referenceKeyPoints, Mat &referenceDescriptors, 
+	vector<KeyPoint> &transformedKeyPoints ,Mat &transformedDescriptors, struct ImageData &imageData, 
+	vector<struct Data>& result, int width, int height);

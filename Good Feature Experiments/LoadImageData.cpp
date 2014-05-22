@@ -49,6 +49,7 @@ void LoadData(vector<KeyPoint> &referenceKeyPoints, vector<vector<KeyPoint>> &tr
 		data.keypoint = referenceKeyPoints.at(i);
 		data.descriptor = referenceDescriptor.row(i);
 		data.cornerness = 0;
+		data.matchScore = 0;
 		result.push_back(data);
 	}
 

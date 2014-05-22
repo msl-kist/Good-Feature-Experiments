@@ -76,8 +76,14 @@
     <ClCompile Include="agast\oast9_16_nms.cc" />
     <ClCompile Include="brisk\brisk.cpp" />
     <ClCompile Include="CornernessTest.cpp" />
+    <ClCompile Include="gcFilterMatches.cpp" />
+    <ClCompile Include="gcHomography.cpp" />
+    <ClCompile Include="gcKeypointsRecover.cpp" />
+    <ClCompile Include="gcMatches2Points.cpp" />
     <ClCompile Include="LoadImageData.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MatchingCountTest.cpp" />
+    <ClCompile Include="SaveData.cpp" />
     <ClCompile Include="SelfSimilarityTest.cpp" />
     <ClCompile Include="Seperability.cpp" />
   </ItemGroup>

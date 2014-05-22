@@ -37,15 +37,16 @@ void main()
 
 	for(int i=0; i<imageData.size();++i)
 	{
-		//Mat &transformedImage = transformedImages[i];
 		vector<KeyPoint> tempKeypoint;
+		Mat	tempDescriptor;
 
 		// 1번 실험
 		CornernessTest(	referenceKeyPoints, 
+						referenceDescriptor,
 						transformedKeyPoints[i],				// K and K'
 						transformedDescriptors[i],
-						imageData[i],result, tempKeypoint,width,height);
-
+						imageData[i],result, tempKeypoint,
+						tempDescriptor,width,height);
 
 		/*
 		// TODO: (종훈) 변환 이미지에 대한 디스크립터 생성
@@ -56,23 +57,35 @@ void main()
 		
 		// 2번 실험
 		SelfSimilarityTest(	referenceKeyPoints,
-							transformedKeyPoints[i],
+							tempKeypoint,
 							referenceDescriptor,
-							transformedDescriptors[i],
+							tempDescriptor,
 							matcher, matches_brisk,
 							result);
-		/*
+		
 		// 3번 실험
-		SeperatibilityTest(	referenceKeyPoints,
-							transformedKeyPoints[i],
-							referenceDescriptor,
-							transformedDescriptors[i],
-							matcher, matches_brisk,
-							result[i].data);
-		*/					
+// 		SeperatibilityTest(	referenceKeyPoints,
+// 							tempKeypoint,
+// 							referenceDescriptor,
+// 							tempDescriptor,
+// 							matcher, matches_brisk,
+// 							result);
+					
+		MatchingCountTest(referenceKeyPoints, 
+						  referenceDescriptor, 
+						  transformedKeyPoints[i],
+						  transformedDescriptors[i],
+						  imageData[i],
+						  result,
+						  width,
+						  height);
 	}
 
 	// TODO: (종훈) 파일 저장
+
+	SaveData(result);
+
+	/*result[0].keypoint.response*/
 
 	//return 0;
 

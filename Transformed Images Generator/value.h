@@ -12,10 +12,10 @@
 #define ANGLE_INCREASE 10
 
 #define MIN_SCALE 0.5
-#define MAX_SCALE 0.5
+#define MAX_SCALE 2.0
 #define SCALE_INCREASE 0.1
 
 
 #define MAX_DB_SIZE 1
-
+//0.5 2.0
 #endif

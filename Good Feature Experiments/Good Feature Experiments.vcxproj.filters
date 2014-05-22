@@ -69,6 +69,24 @@
     <ClCompile Include="LoadImageData.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="SaveData.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchingCountTest.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="gcFilterMatches.cpp">
+      <Filter>brisk</Filter>
+    </ClCompile>
+    <ClCompile Include="gcHomography.cpp">
+      <Filter>brisk</Filter>
+    </ClCompile>
+    <ClCompile Include="gcKeypointsRecover.cpp">
+      <Filter>brisk</Filter>
+    </ClCompile>
+    <ClCompile Include="gcMatches2Points.cpp">
+      <Filter>brisk</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OpenCv2.4.5_libs.h">
