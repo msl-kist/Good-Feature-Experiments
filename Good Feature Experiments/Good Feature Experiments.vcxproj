@@ -83,6 +83,7 @@
     <ClCompile Include="LoadImageData.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MatchingCountTest.cpp" />
+    <ClCompile Include="ReadResultData.cpp" />
     <ClCompile Include="SaveData.cpp" />
     <ClCompile Include="SelfSimilarityTest.cpp" />
     <ClCompile Include="Seperability.cpp" />

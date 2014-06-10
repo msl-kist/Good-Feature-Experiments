@@ -78,5 +78,5 @@ void CornernessTest(vector<KeyPoint> &referenceKeyPoints, Mat &referenceDescript
 		}
 	}
 
-	cout<< angle<< " " << scale << " " << t << " " << f<<endl;
+	//cout<< angle<< " " << scale << " " << t << " " << f<<endl;
 }

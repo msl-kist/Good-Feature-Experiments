@@ -78,7 +78,7 @@ void LoadData(vector<KeyPoint> &referenceKeyPoints, vector<vector<KeyPoint>> &tr
 
 void LoadImage(int num, int& width, int& height){
 	char dbFilename[100];
-	sprintf(dbFilename,"../Transformed Images Generator/dbImage/%d.jpg", num);	
+	sprintf(dbFilename,"../Transformed Images Generator/dbImage/1.jpg");//, num);	
 	IplImage *dbImage = cvLoadImage(dbFilename);
 
 	width = dbImage->width;

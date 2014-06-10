@@ -93,3 +93,8 @@ void SaveData(vector<struct Data>& result);
 void MatchingCountTest(vector<KeyPoint> &referenceKeyPoints, Mat &referenceDescriptors, 
 	vector<KeyPoint> &transformedKeyPoints ,Mat &transformedDescriptors, struct ImageData &imageData, 
 	vector<struct Data>& result, int width, int height);
+
+/************************************************************************/
+/*TODO: (¾çÀ±½Ä) 	Load Result Data
+/************************************************************************/
+void ReadResultData(vector<struct Data>& result,vector<vector<KeyPoint>> keypoint, vector<Mat> descriptor);

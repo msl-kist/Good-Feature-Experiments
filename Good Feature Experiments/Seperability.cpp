@@ -20,7 +20,7 @@ void SeperatibilityTest(vector<KeyPoint> &referenceKeyPoints, vector<KeyPoint> &
 
 			for(int j=0; j< transformedKeyPoints.size() ; ++j)
 			{
-				if(!IS_NULL(transformedKeyPoints[j]))				//TODO: NONE 정의
+				if(!IS_NULL(transformedKeyPoints[j]) && i!=j)				//TODO: NONE 정의
 				{
 					// 디스크립터 추출
 					Mat desc2;

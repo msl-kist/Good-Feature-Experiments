@@ -12,7 +12,7 @@ void countCorrectMatch(vector<KeyPoint> referenceKeyPoint, Mat &refernceDescript
 struct ImageData &imageData, vector<struct Data>& result, int width, int height, 
 	CvPoint center,Mat &transformedDescriptors, std::vector<DMatch> matches)
 {
-
+	cout<< matches.size() << endl;
 	for(int i = 0; i < matches.size(); i++){
 		int i1 = matches[i].queryIdx; 
 		int i2 = matches[i].trainIdx; 
@@ -25,7 +25,6 @@ struct ImageData &imageData, vector<struct Data>& result, int width, int height,
 		rotatePoint.x = center.x + point.x * cos(imageData.angle * DEG_TO_RAD) - point.y * sin(imageData.angle * DEG_TO_RAD);
 		rotatePoint.y = center.y + (point.x * sin(imageData.angle * DEG_TO_RAD)) + (point.y * cos(imageData.angle * DEG_TO_RAD));
 		
-
 		if(calcMatchDistance(rotatePoint,transformedKeyPoints.at(i2)) < 2){
 			result[i1].matchScore++;
 		}
