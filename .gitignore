@@ -16,6 +16,7 @@ tmp/
 *.txt
 *.obj
 *.xml
+*.sdf
 *.zip
 *~.nib
 local.properties
